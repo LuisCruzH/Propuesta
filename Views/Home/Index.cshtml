@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+<style>
+    .imagen{
+        width:8rem;
+    }
+    .centrado{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+<div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col centrado">
+        <div class="card border-danger text-center" style="width:20rem;">
+            <div class="card-body text-secondary" style=" background-color:#ffafcc;">
+                <a id="lblComentario" class="card-title fs-5 text-decoration-none text-light" asp-area="" asp-controller="Comentarios" asp-action="Index">
+                    Documento de comentarios
+                </a>
+            </div>
+            <div class="card-footeratio bg-transparent border-danger">
+                <img src="/bloc-de-dibujo.png" class="card-img-bottom imagen" alt="...">
+            </div>
+        </div>
+    </div>
+    <div class="col centrado">
+        <div class="card border-success text-center" style="width:20rem;">
+            <div class="card-body text-secondary" style=" background-color:#b5e8a4;">
+                <a class="card-title fs-5 text-decoration-none text-light">Generar reporte de lentes</a>
+            </div>
+            <div class="card-footer bg-transparent border-success">
+                <img src="/notas-adhesivas.png" class="card-img-bottom imagen" alt="...">
+            </div>
+        </div>
+    </div>
+    <div class="col centrado">
+        <div class="card border-primary text-center" style="width:20rem;">
+            <div class="card-body text-secondary" style=" background-color:#b4e1ff;">
+                <a class="card-title fs-5 text-decoration-none text-light">Limpiar diputados/cenadores</a>
+            </div>
+            <div class="card-footer bg-transparent border-primary">
+                <img src="~/trabajo-en-equipo.png" class="card-img-bottom imagen" alt="...">
+            </div>
+        </div>
+    </div>
+    <div class="col centrado">
+        <div class="card border-warning text-center" style="width:20rem;">
+            <div class="card-body text-secondary" style=" background-color:#f7ef81;">
+                <a class="card-title fs-5 text-decoration-none text-light">Extraer resultados de encuestas</a>
+            </div>
+            <div class="card-footer bg-transparent border-warning">
+                <img src="/pros-y-contras.png" class="card-img-bottom imagen" alt="...">
+            </div>
+        </div>
+    </div>
+</div>

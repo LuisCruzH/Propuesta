@@ -1,0 +1,84 @@
+﻿@{
+    ViewData["Title"] = "Comentarios";
+}
+<style>
+    .centrado {
+        background-color: #edf6f9;
+    }
+</style>
+<div class="row col-md-8 centrado">
+    <div class="mb-3 col-md-12" style="margin-top:1rem;">
+        <h3>Documento de comentarios</h3>
+    </div>
+    <div class="mb-3 col-md-12">
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="chkProgram" checked>
+            <label class="form-check-label" for="chkProgram">Programador</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="chkUser">
+            <label class="form-check-label" for="chkUser">Basico</label>
+        </div>
+    </div>
+    <div class="mb-3 col-md-6 program">
+        <label for="fechaInicio" class="form-label">Fecha:</label>
+        <input type="date" id="fechaInicio" class="form-control" placeholder="Seleccionar fecha">
+    </div>
+    <div class="mb-3 col-md-6 program">
+        <label for="horaFin" class="form-label">Hasta:</label>
+        <input type="time" id="horaFin" class="form-control" placeholder="Seleccionar Hora">
+    </div>
+
+    <div class="mb-3 col-md-6 user" style="display:none;">
+        <label for="fechaInicio" class="form-label">Fecha inicial:</label>
+        <input type="date" id="fechaInicio" class="form-control" placeholder="Seleccionar fecha inicial">
+    </div>
+    <div class="mb-3 col-md-6 user" style="display:none;">
+        <label for="fechaFin" class="form-label">Fecha final:</label>
+        <input type="date" id="fechaFin" class="form-control" placeholder="Seleccionar fecha final">
+    </div>
+
+
+    <div class="mb-3 col-md-12 d-grid gap-2 d-md-flex justify-content-md-end">
+        <button id="generaDoc" type="button" class="btn btn-outline-success">Generar</button>
+    </div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $('#chkProgram').change(function() {
+            if ($(this).is(':checked')) {
+                $('#chkUser').prop('checked', false);
+                $('.program').css('display', 'block');
+                $('.user').css('display', 'none');
+
+            } else { 
+                $('#chkUser').prop('checked', true);
+                $('.program').css('display', 'none');
+                $('.user').css('display', 'block');
+            }
+        });
+        $('#chkUser').change(function() {
+            if ($(this).is(':checked')) {
+                $('#chkProgram').prop('checked', false);
+                $('.program').css('display', 'none');
+                $('.user').css('display', 'block');
+            }else{
+                $('#chkProgram').prop('checked', true);
+                $('.program').css('display', 'block');
+                $('.user').css('display', 'none');
+            }
+        });
+
+        $('#generaDoc').click(function() { 
+            console.log('Holi');
+            /*
+                Aqui iria la funcion del envio de parametros, dependiendo de que check esta habilitado,
+                tomaria los input, se diferencían con las clases:
+                    -program
+                    -user
+            */
+        });
+    });
+</script>
